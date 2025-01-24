@@ -169,6 +169,7 @@ export default function Dashboard() {
                   <Users className="h-5 w-5" />
                   Call History
                 </Link>
+
               </nav>
               <div className="mt-auto">
                 <Card>
@@ -189,7 +190,7 @@ export default function Dashboard() {
             </SheetContent>
           </Sheet>
           <div className="w-full flex-1">
-
+            <AdminSearch />
           </div>
           <ModeToggle />
           <DropdownMenu>
@@ -210,78 +211,10 @@ export default function Dashboard() {
           </DropdownMenu>
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
-  <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-    <Card>
-      <CardHeader>
-        <CardTitle>Total Revenue</CardTitle>
-        <CardDescription>$45,231.89</CardDescription>
-        <Badge className="text-green-500">+20.1% from last month</Badge>
-      </CardHeader>
-    </Card>
-    <Card>
-      <CardHeader>
-        <CardTitle>Subscriptions</CardTitle>
-        <CardDescription>+2,350</CardDescription>
-        <Badge className="text-green-500">+180.1% from last month</Badge>
-      </CardHeader>
-    </Card>
-    <Card>
-      <CardHeader>
-        <CardTitle>Sales</CardTitle>
-        <CardDescription>+12,234</CardDescription>
-        <Badge className="text-green-500">+19% from last month</Badge>
-      </CardHeader>
-    </Card>
-    <Card>
-      <CardHeader>
-        <CardTitle>Active Now</CardTitle>
-        <CardDescription>+573</CardDescription>
-        <Badge className="text-green-500">+201 since last hour</Badge>
-      </CardHeader>
-    </Card>
-  </div>
-
-  <div className="grid gap-4 lg:grid-cols-3">
-    <Card className="lg:col-span-2">
-      <CardHeader>
-        <CardTitle>Overview</CardTitle>
-      </CardHeader>
-      <CardContent>
-        {/* Replace this with a graph library like Chart.js or Recharts */}
-        <div className="h-[300px] bg-gray-200"></div>
-      </CardContent>
-    </Card>
-
-    <Card>
-      <CardHeader>
-        <CardTitle>Recent Sales</CardTitle>
-        <CardDescription>You made 265 sales this month.</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <ul className="space-y-4">
-          {[
-            { name: "Olivia Martin", email: "olivia.martin@email.com", amount: "$1,999.00" },
-            { name: "Jackson Lee", email: "jackson.lee@email.com", amount: "$1,999.00" },
-            { name: "Isabella Nguyen", email: "isabella.nguyen@email.com", amount: "$39.00" },
-            { name: "William Kim", email: "will@email.com", amount: "$299.00" },
-            { name: "Sofia Davis", email: "sofia.davis@email.com", amount: "$299.00" },
-          ].map((sale, index) => (
-            <li key={index} className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium">{sale.name}</p>
-                <p className="text-xs text-muted-foreground">{sale.email}</p>
-              </div>
-              <p className="text-sm font-medium">{sale.amount}</p>
-            </li>
-          ))}
-        </ul>
-      </CardContent>
-    </Card>
-  </div>
-</main>
+          <Orders />
+        </main>
       </div>
     </div>
   );
 } 
-
-/*DASHBOARD PAGE */
+/*DATABASE PAGE*/

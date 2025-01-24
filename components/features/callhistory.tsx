@@ -15,11 +15,11 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-export default function Orders() {
+export default function CallHistory() {
   return (
     <Card>
       <CardHeader className="px-7">
-        <CardTitle>Orders</CardTitle>
+        <CardTitle>Call History</CardTitle>
         <CardDescription>Recent orders from your store.</CardDescription>
       </CardHeader>
       <CardContent>

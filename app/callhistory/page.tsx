@@ -31,8 +31,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ModeToggle } from "@/components/ui/mode-toggle";
-import Orders from "@/components/features/orders";
+import Agents from "@/components/features/agents";
 import AdminSearch from "@/components/features/admin-search";
+import Database from "@/components/features/database";
+import CallHistory from "@/components/features/callhistory";
 
 export default function Dashboard() {
   return (
@@ -59,42 +61,35 @@ export default function Dashboard() {
           <div className="flex-1">
             <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
               <Link
-                href="/mainpage"
+                href="/"
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
               >
                 <Home className="h-4 w-4" />
                 Dashboard
               </Link>
               <Link
-                href="#"
+                href="/database"
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
               >
                 <ShoppingCart className="h-4 w-4" />
-                Orders
+                Database
                 <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
                   6
                 </Badge>
               </Link>
               <Link
-                href="#"
+                href="/agents"
                 className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
               >
                 <Package className="h-4 w-4" />
-                Products{" "}
+                Agents{" "}
               </Link>
               <Link
-                href="#"
+                href="/callhistory"
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
               >
                 <Users className="h-4 w-4" />
-                Customers
-              </Link>
-              <Link
-                href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
-                <LineChart className="h-4 w-4" />
-                Analytics
+                Call History
               </Link>
             </nav>
           </div>
@@ -146,43 +141,37 @@ export default function Dashboard() {
                   <span className="sr-only">Claro Energy</span>
                 </Link>
                 <Link
-                  href="/mainpage"
+                  href="/"
                   className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
                 >
                   <Home className="h-5 w-5" />
                   Dashboard
                 </Link>
                 <Link
-                  href="#"
+                  href="/database"
                   className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
                 >
                   <ShoppingCart className="h-5 w-5" />
-                  Orders
+                  Database
                   <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
                     6
                   </Badge>
                 </Link>
                 <Link
-                  href="#"
+                  href="/agents"
                   className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
                 >
                   <Package className="h-5 w-5" />
-                  Products
+                  Agents
                 </Link>
                 <Link
-                  href="#"
+                  href="/callhistory"
                   className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
                 >
                   <Users className="h-5 w-5" />
-                  Customers
+                  Call History
                 </Link>
-                <Link
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                >
-                  <LineChart className="h-5 w-5" />
-                  Analytics
-                </Link>
+
               </nav>
               <div className="mt-auto">
                 <Card>
@@ -224,76 +213,11 @@ export default function Dashboard() {
           </DropdownMenu>
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
-  <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-    <Card>
-      <CardHeader>
-        <CardTitle>Total Revenue</CardTitle>
-        <CardDescription>$45,231.89</CardDescription>
-        <Badge className="text-green-500">+20.1% from last month</Badge>
-      </CardHeader>
-    </Card>
-    <Card>
-      <CardHeader>
-        <CardTitle>Subscriptions</CardTitle>
-        <CardDescription>+2,350</CardDescription>
-        <Badge className="text-green-500">+180.1% from last month</Badge>
-      </CardHeader>
-    </Card>
-    <Card>
-      <CardHeader>
-        <CardTitle>Sales</CardTitle>
-        <CardDescription>+12,234</CardDescription>
-        <Badge className="text-green-500">+19% from last month</Badge>
-      </CardHeader>
-    </Card>
-    <Card>
-      <CardHeader>
-        <CardTitle>Active Now</CardTitle>
-        <CardDescription>+573</CardDescription>
-        <Badge className="text-green-500">+201 since last hour</Badge>
-      </CardHeader>
-    </Card>
-  </div>
-
-  <div className="grid gap-4 lg:grid-cols-3">
-    <Card className="lg:col-span-2">
-      <CardHeader>
-        <CardTitle>Overview</CardTitle>
-      </CardHeader>
-      <CardContent>
-        {/* Replace this with a graph library like Chart.js or Recharts */}
-        <div className="h-[300px] bg-gray-200"></div>
-      </CardContent>
-    </Card>
-
-    <Card>
-      <CardHeader>
-        <CardTitle>Recent Sales</CardTitle>
-        <CardDescription>You made 265 sales this month.</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <ul className="space-y-4">
-          {[
-            { name: "Olivia Martin", email: "olivia.martin@email.com", amount: "$1,999.00" },
-            { name: "Jackson Lee", email: "jackson.lee@email.com", amount: "$1,999.00" },
-            { name: "Isabella Nguyen", email: "isabella.nguyen@email.com", amount: "$39.00" },
-            { name: "William Kim", email: "will@email.com", amount: "$299.00" },
-            { name: "Sofia Davis", email: "sofia.davis@email.com", amount: "$299.00" },
-          ].map((sale, index) => (
-            <li key={index} className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium">{sale.name}</p>
-                <p className="text-xs text-muted-foreground">{sale.email}</p>
-              </div>
-              <p className="text-sm font-medium">{sale.amount}</p>
-            </li>
-          ))}
-        </ul>
-      </CardContent>
-    </Card>
-  </div>
-</main>
+          <CallHistory/>
+        </main>
       </div>
     </div>
   );
 } 
+
+/*CALL HISTORY*/
