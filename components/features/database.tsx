@@ -23,6 +23,19 @@ export default function Database() {
         <CardDescription>Recent database operations and activity logs.</CardDescription>
       </CardHeader>
       <CardContent>
+        {/* CSV Upload Section */}
+        <div className="mb-4">
+          <label htmlFor="csv-upload" className="block text-sm font-medium text-gray-700">
+            Upload CSV File
+          </label>
+          <input
+            id="csv-upload"
+            type="file"
+            accept=".csv"
+            className="mt-2 p-2 border border-gray-300 rounded-md"
+          />
+        </div>
+
         <Table>
           <TableHeader>
             <TableRow>
