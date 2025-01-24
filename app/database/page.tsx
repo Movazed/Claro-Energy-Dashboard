@@ -83,7 +83,7 @@ export default function Dashboard() {
                 Agents{" "}
               </Link>
               <Link
-                href="/callhistory"
+                href="/call"
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
               >
                 <Users className="h-4 w-4" />
@@ -163,7 +163,7 @@ export default function Dashboard() {
                   Agents
                 </Link>
                 <Link
-                  href="/callhistory"
+                  href="/call"
                   className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
                 >
                   <Users className="h-5 w-5" />
@@ -190,7 +190,7 @@ export default function Dashboard() {
             </SheetContent>
           </Sheet>
           <div className="w-full flex-1">
-            <AdminSearch />
+
           </div>
           <ModeToggle />
           <DropdownMenu>

@@ -1,3 +1,7 @@
+"use client";
+
+import { useRouter } from "next/navigation"; // Correct import for the App Router
+import { usePathname } from "next/navigation"; // Import usePathname for route matching
 import Link from "next/link";
 import Image from "next/image"; // Import the Image component
 import {
@@ -35,21 +39,29 @@ import Orders from "@/components/features/database";
 import AdminSearch from "@/components/features/admin-search";
 
 export default function Dashboard() {
+  const pathname = usePathname(); // Get the current pathname using usePathname
+
+  const getLinkClass = (path: string) =>
+    `flex items-center gap-3 rounded-lg px-3 py-2 transition-all ${
+      pathname === path
+        ? "bg-muted text-primary" // Selected effect
+        : "text-muted-foreground hover:text-primary" // Default style
+    }`;
+
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
       <div className="hidden border-r bg-muted/40 md:block">
         <div className="flex h-full max-h-screen flex-col gap-2">
           <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
             <Link href="/" className="flex items-center gap-2 font-semibold">
-              {/* Use the logo from the public folder */}
               <Image
-                src="/logo.png" // Path relative to the public folder
+                src="/logo.png"
                 alt="Claro Energy Logo"
-                width={24} // Adjust as needed
-                height={24} // Adjust as needed
+                width={24}
+                height={24}
                 className="h-6 w-6"
               />
-              <span className="">Claro Energy</span>
+              <span>Claro Energy</span>
             </Link>
             <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
               <Bell className="h-4 w-4" />
@@ -58,41 +70,29 @@ export default function Dashboard() {
           </div>
           <div className="flex-1">
             <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
-              <Link
-                href="/"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
+              <Link href="/" className={getLinkClass("/")}>
                 <Home className="h-4 w-4" />
                 Dashboard
               </Link>
-              <Link
-                href="/database"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
+              <Link href="/database" className={getLinkClass("/database")}>
                 <ShoppingCart className="h-4 w-4" />
                 Database
                 <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
                   6
                 </Badge>
               </Link>
-              <Link
-                href="/agents"
-                className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
-              >
+              <Link href="/agents" className={getLinkClass("/agents")}>
                 <Package className="h-4 w-4" />
-                Agents{" "}
+                Agents
               </Link>
-              <Link
-                href="/callhistory"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
+              <Link href="/call" className={getLinkClass("/call")}>
                 <Users className="h-4 w-4" />
                 Call History
               </Link>
             </nav>
           </div>
           <div className="mt-auto p-4">
-            <Card x-chunk="dashboard-02-chunk-0">
+            <Card>
               <CardHeader className="p-2 pt-0 md:p-4">
                 <CardTitle>Upgrade to Pro</CardTitle>
                 <CardDescription>
@@ -128,44 +128,31 @@ export default function Dashboard() {
                   href="#"
                   className="flex items-center gap-2 text-lg font-semibold"
                 >
-                  {/* Use the logo from the public folder in the mobile menu */}
                   <Image
-                    src="/logo.png" // Path relative to the public folder
+                    src="/logo.png"
                     alt="Claro Energy Logo"
-                    width={24} // Adjust as needed
-                    height={24} // Adjust as needed
+                    width={24}
+                    height={24}
                     className="h-6 w-6"
                   />
                   <span className="sr-only">Claro Energy</span>
                 </Link>
-                <Link
-                  href="/"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                >
+                <Link href="/" className={getLinkClass("/")}>
                   <Home className="h-5 w-5" />
                   Dashboard
                 </Link>
-                <Link
-                  href="/database"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
-                >
+                <Link href="/database" className={getLinkClass("/database")}>
                   <ShoppingCart className="h-5 w-5" />
                   Database
                   <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
                     6
                   </Badge>
                 </Link>
-                <Link
-                  href="/agents"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                >
+                <Link href="/agents" className={getLinkClass("/agents")}>
                   <Package className="h-5 w-5" />
                   Agents
                 </Link>
-                <Link
-                  href="/callhistory"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                >
+                <Link href="/call" className={getLinkClass("/call")}>
                   <Users className="h-5 w-5" />
                   Call History
                 </Link>
@@ -188,9 +175,7 @@ export default function Dashboard() {
               </div>
             </SheetContent>
           </Sheet>
-          <div className="w-full flex-1">
-
-          </div>
+          <div className="w-full flex-1"></div>
           <ModeToggle />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -283,5 +268,3 @@ export default function Dashboard() {
     </div>
   );
 } 
-
-/*DASHBOARD PAGE */

@@ -19,150 +19,84 @@ export default function Agents() {
   return (
     <Card>
       <CardHeader className="px-7">
-        <CardTitle>Agents</CardTitle>
-        <CardDescription>Recent orders from your store.</CardDescription>
+        <CardTitle>Agentic AI</CardTitle>
+        <CardDescription>Recent activities in your AI system.</CardDescription>
       </CardHeader>
       <CardContent>
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Customer</TableHead>
-              <TableHead className="hidden sm:table-cell">Type</TableHead>
+              <TableHead>Agent</TableHead>
+              <TableHead className="hidden sm:table-cell">Task Type</TableHead>
               <TableHead className="hidden sm:table-cell">Status</TableHead>
-              <TableHead className="hidden md:table-cell">Date</TableHead>
-              <TableHead className="text-right">Amount</TableHead>
+              <TableHead className="hidden md:table-cell">Last Updated</TableHead>
+              <TableHead className="text-right">Priority</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             <TableRow className="bg-accent">
               <TableCell>
-                <div className="font-medium">Liam Johnson</div>
+                <div className="font-medium">Alpha Bot</div>
                 <div className="hidden text-sm text-muted-foreground md:inline">
-                  liam@example.com
+                  alpha@agentic.ai
                 </div>
               </TableCell>
-              <TableCell className="hidden sm:table-cell">Sale</TableCell>
+              <TableCell className="hidden sm:table-cell">Data Analysis</TableCell>
               <TableCell className="hidden sm:table-cell">
                 <Badge className="text-xs" variant="secondary">
-                  Fulfilled
+                  Completed
                 </Badge>
               </TableCell>
-              <TableCell className="hidden md:table-cell">2023-06-23</TableCell>
-              <TableCell className="text-right">$250.00</TableCell>
+              <TableCell className="hidden md:table-cell">2025-01-23</TableCell>
+              <TableCell className="text-right">High</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>
-                <div className="font-medium">Olivia Smith</div>
+                <div className="font-medium">Beta Assistant</div>
                 <div className="hidden text-sm text-muted-foreground md:inline">
-                  olivia@example.com
+                  beta@agentic.ai
                 </div>
               </TableCell>
-              <TableCell className="hidden sm:table-cell">Refund</TableCell>
+              <TableCell className="hidden sm:table-cell">Error Resolution</TableCell>
               <TableCell className="hidden sm:table-cell">
                 <Badge className="text-xs" variant="outline">
-                  Declined
+                  Pending
                 </Badge>
               </TableCell>
-              <TableCell className="hidden md:table-cell">2023-06-24</TableCell>
-              <TableCell className="text-right">$150.00</TableCell>
+              <TableCell className="hidden md:table-cell">2025-01-22</TableCell>
+              <TableCell className="text-right">Medium</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>
-                <div className="font-medium">Noah Williams</div>
+                <div className="font-medium">Gamma Advisor</div>
                 <div className="hidden text-sm text-muted-foreground md:inline">
-                  noah@example.com
+                  gamma@agentic.ai
                 </div>
               </TableCell>
-              <TableCell className="hidden sm:table-cell">
-                Subscription
-              </TableCell>
+              <TableCell className="hidden sm:table-cell">Forecasting</TableCell>
               <TableCell className="hidden sm:table-cell">
                 <Badge className="text-xs" variant="secondary">
-                  Fulfilled
+                  Completed
                 </Badge>
               </TableCell>
-              <TableCell className="hidden md:table-cell">2023-06-25</TableCell>
-              <TableCell className="text-right">$350.00</TableCell>
+              <TableCell className="hidden md:table-cell">2025-01-20</TableCell>
+              <TableCell className="text-right">Low</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>
-                <div className="font-medium">Emma Brown</div>
+                <div className="font-medium">Delta Solver</div>
                 <div className="hidden text-sm text-muted-foreground md:inline">
-                  emma@example.com
+                  delta@agentic.ai
                 </div>
               </TableCell>
-              <TableCell className="hidden sm:table-cell">Sale</TableCell>
+              <TableCell className="hidden sm:table-cell">Optimization</TableCell>
               <TableCell className="hidden sm:table-cell">
                 <Badge className="text-xs" variant="secondary">
-                  Fulfilled
+                  Completed
                 </Badge>
               </TableCell>
-              <TableCell className="hidden md:table-cell">2023-06-26</TableCell>
-              <TableCell className="text-right">$450.00</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <div className="font-medium">Liam Johnson</div>
-                <div className="hidden text-sm text-muted-foreground md:inline">
-                  liam@example.com
-                </div>
-              </TableCell>
-              <TableCell className="hidden sm:table-cell">Sale</TableCell>
-              <TableCell className="hidden sm:table-cell">
-                <Badge className="text-xs" variant="secondary">
-                  Fulfilled
-                </Badge>
-              </TableCell>
-              <TableCell className="hidden md:table-cell">2023-06-23</TableCell>
-              <TableCell className="text-right">$250.00</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <div className="font-medium">Liam Johnson</div>
-                <div className="hidden text-sm text-muted-foreground md:inline">
-                  liam@example.com
-                </div>
-              </TableCell>
-              <TableCell className="hidden sm:table-cell">Sale</TableCell>
-              <TableCell className="hidden sm:table-cell">
-                <Badge className="text-xs" variant="secondary">
-                  Fulfilled
-                </Badge>
-              </TableCell>
-              <TableCell className="hidden md:table-cell">2023-06-23</TableCell>
-              <TableCell className="text-right">$250.00</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <div className="font-medium">Olivia Smith</div>
-                <div className="hidden text-sm text-muted-foreground md:inline">
-                  olivia@example.com
-                </div>
-              </TableCell>
-              <TableCell className="hidden sm:table-cell">Refund</TableCell>
-              <TableCell className="hidden sm:table-cell">
-                <Badge className="text-xs" variant="outline">
-                  Declined
-                </Badge>
-              </TableCell>
-              <TableCell className="hidden md:table-cell">2023-06-24</TableCell>
-              <TableCell className="text-right">$150.00</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <div className="font-medium">Emma Brown</div>
-                <div className="hidden text-sm text-muted-foreground md:inline">
-                  emma@example.com
-                </div>
-              </TableCell>
-              <TableCell className="hidden sm:table-cell">Sale</TableCell>
-              <TableCell className="hidden sm:table-cell">
-                <Badge className="text-xs" variant="secondary">
-                  Fulfilled
-                </Badge>
-              </TableCell>
-              <TableCell className="hidden md:table-cell">2023-06-26</TableCell>
-              <TableCell className="text-right">$450.00</TableCell>
+              <TableCell className="hidden md:table-cell">2025-01-21</TableCell>
+              <TableCell className="text-right">High</TableCell>
             </TableRow>
           </TableBody>
         </Table>
