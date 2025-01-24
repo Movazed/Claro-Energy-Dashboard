@@ -44,13 +44,13 @@ import BarChart from "@/components/ui/BarChart"; // Adjust the import path as ne
 export default function Dashboard() {
   const pathname = usePathname(); // Get the current pathname using usePathname
 
-  const getLinkClass = (path: string) =>
-    `flex items-center gap-3 rounded-lg px-3 py-2 transition-all ${
-      pathname.startsWith(path)
-        ? "bg-muted text-primary" // Selected effect
-        : "text-muted-foreground hover:text-primary" // Default style
+  const getLinkClass = (path: string) => {
+    // Check if the current pathname starts with the provided path
+    return `flex items-center gap-3 rounded-lg px-3 py-2 transition-all ${
+      pathname.startsWith(path) ? "bg-muted text-primary" : "text-muted-foreground hover:text-primary"
     }`;
-
+  };
+  
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
       {/* Sidebar */}
@@ -73,24 +73,24 @@ export default function Dashboard() {
             </Button>
           </div>
           <div className="flex-1">
-            <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
-              <Link href="/" className={getLinkClass("/")}>
-                <Home className="h-4 w-4" />
-                Dashboard
-              </Link>
-              <Link href="/database" className={getLinkClass("/database")}>
-                <ShoppingCart className="h-4 w-4" />
-                Database
-              </Link>
-              <Link href="/agents" className={getLinkClass("/agents")}>
-                <Package className="h-4 w-4" />
-                Agents
-              </Link>
-              <Link href="/call" className={getLinkClass("/call")}>
-                <Users className="h-4 w-4" />
-                Call History
-              </Link>
-            </nav>
+          <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
+        <Link href="/" className={getLinkClass("/")}>
+          <Home className="h-4 w-4" />
+          Dashboard
+        </Link>
+        <Link href="/database" className={getLinkClass("/database")}>
+          <ShoppingCart className="h-4 w-4" />
+          Database
+        </Link>
+        <Link href="/agents" className={getLinkClass("/agents")}>
+          <Package className="h-4 w-4" />
+          Agents
+        </Link>
+        <Link href="/call" className={getLinkClass("/call")}>
+          <Users className="h-4 w-4" />
+          Call History
+        </Link>
+      </nav>
           </div>
           <div className="mt-auto p-4">
             {/* Optional: Add footer content here */}
@@ -132,9 +132,7 @@ export default function Dashboard() {
                 <Link href="/database" className={getLinkClass("/database")}>
                   <ShoppingCart className="h-5 w-5" />
                   Database
-                  <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                    6
-                  </Badge>
+
                 </Link>
                 <Link href="/agents" className={getLinkClass("/agents")}>
                   <Package className="h-5 w-5" />
@@ -146,20 +144,7 @@ export default function Dashboard() {
                 </Link>
               </nav>
               <div className="mt-auto">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Upgrade to Pro</CardTitle>
-                    <CardDescription>
-                      Unlock all features and get unlimited access to our
-                      support team.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button size="sm" className="w-full">
-                      Upgrade
-                    </Button>
-                  </CardContent>
-                </Card>
+
               </div>
             </SheetContent>
           </Sheet>
